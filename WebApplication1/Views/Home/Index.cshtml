@@ -1,8 +1,62 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Banner -->
+<div class="rounded-3 overflow-hidden mb-5 position-relative" style="height:380px;">
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&h=380&fit=crop"
+         alt="Event venue" class="w-100 h-100" style="object-fit:cover; filter:brightness(0.55);" />
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
+        <h1 class="display-4 fw-bold">EventEase</h1>
+        <p class="lead mb-4">All-in-one venue booking management for your events</p>
+        <a asp-controller="Bookings" asp-action="Create" class="btn btn-primary btn-lg px-4">New Booking</a>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=250&fit=crop"
+                 class="card-img-top" alt="Venues" style="height:200px;object-fit:cover;" />
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-building me-2 text-primary"></i>Venues</h5>
+                <p class="card-text text-muted">Browse and manage all available event venues, locations, and capacities.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a asp-controller="Venues" asp-action="Index" class="btn btn-outline-primary">Manage Venues</a>
+                <a asp-controller="Venues" asp-action="Create" class="btn btn-primary ms-2">+ Add</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=250&fit=crop"
+                 class="card-img-top" alt="Events" style="height:200px;object-fit:cover;" />
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-calendar-event me-2 text-primary"></i>Events</h5>
+                <p class="card-text text-muted">Create and schedule events, assign venues, and manage event details.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a asp-controller="Events" asp-action="Index" class="btn btn-outline-primary">Manage Events</a>
+                <a asp-controller="Events" asp-action="Create" class="btn btn-primary ms-2">+ Add</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=250&fit=crop"
+                 class="card-img-top" alt="Bookings" style="height:200px;object-fit:cover;" />
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-journal-check me-2 text-primary"></i>Bookings</h5>
+                <p class="card-text text-muted">View all bookings, search by event or booking ID, and manage reservations.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a asp-controller="Bookings" asp-action="Index" class="btn btn-outline-primary">Manage Bookings</a>
+                <a asp-controller="Bookings" asp-action="Create" class="btn btn-primary ms-2">+ Add</a>
+            </div>
+        </div>
+    </div>
 </div>

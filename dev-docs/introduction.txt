@@ -1,0 +1,449 @@
+Background 
+
+ 
+
+EventEase, an up-and-coming event management company, coordinates a variety of events across different venues. Due to rapid growth and increasing demand, EventEase has been overwhelmed with managing multiple venue bookings, scheduling, and handling booking conflicts. Currently, all scheduling and bookings are managed manually, leading to double bookings, last-minute cancellations, and a lack of visibility into venue availability. 
+
+ 
+
+EventEase has contracted your development team to build an efficient, user-friendly online booking platform to streamline these processes. This application should simplify venue management, prevent booking conflicts, provide a clear view of scheduled events, and enable guests to book venues based on availability. The app should also offer search and filtering capabilities to make it easy to view and manage bookings. 
+
+ 
+
+The first phase of the project is building the admin platform, so customers will not be able to make bookings themselves. They can email, call, or walk in and request to make a booking, and from there, one of the booking specialists will use the system to make the booking for the customer. It is possible for an event to be loaded onto the system prior to a venue becoming available, so that once the venue does become available, the booking can be made. 
+
+ 
+
+The CEO of EventEase has provided the following requirements that must be present for the new Venue Booking System: 
+
+EventEase needs a user-friendly web application that allows the booking specialists to browse available venues, view events, and make or manage bookings. 
+
+The system should allow authorised personnel to create, view, update, and delete venue and event information, with secure handling of image uploads for each venue. 
+
+Prevent double bookings for venues and restrict deletion of venues or events associated with existing bookings. 
+
+Ensure that all booking information is stored securely in the cloud, with backups. 
+
+Some important information to be stored includes the locations, capacity, venue/event names, start and end dates, and unique booking IDs 
+
+ 
+
+EventEase envisions a future where this platform integrates with additional cloud services, allowing seamless scaling as their needs grow. 
+
+ 
+
+Introduction 
+
+ 
+
+You will build a Venue Booking System for EventEase using ASP.NET Core MVC, deployed in stages to the cloud. The application will follow three main development phases, each building upon the previous phase, to progressively introduce core functionalities and cloud services. 
+
+ 
+
+Development Phases: 
+
+Part 1: Project Foundation and Initial Deployment 
+
+Database Design: 
+
+Develop an Entity-Relationship Diagram (ERD) that includes the following tables: 
+
+Venue: Contains details such as VenueId, VenueName, Location, Capacity, and ImageUrl. 
+
+Event: Contains event-specific data, including EventId, EventName, EventDate, Description, and VenueId. 
+
+Booking: An associative table linking Venue and Event (containing BookingID, EventID, VenueId, BookingDate) 
+
+You may add additional tables, but keep the structure simple, ensuring it covers the base requirements without overcomplicating the schema. 
+
+Initial Application Development: 
+
+Create an ASP.NET Core MVC project with models for Venues, Events, and Bookings. 
+
+Build the application with necessary controllers, views, and initial CRUD functionality to the database. 
+
+For images, use placeholder URLs (links to sample images) for venues and events in this phase. 
+
+Deploy Initial Version to Azure: 
+
+Deploy the web app to Azure using the Azure Web App Service. 
+
+Set up an Azure SQL Database to store venue, event, and booking information and migrate your local data to your Azure SQL Database. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Part 2: Enhancing Functionality and Integrating Cloud Storage 
+
+Error Handling and Validation: 
+
+Implement validation rules to prevent double bookings for the same venue on the same date. 
+
+Add logic to restrict the deletion of venues or events associated with active bookings, displaying an alert to the booking specialist if an action would affect existing bookings. 
+
+Image Management with Azure Blob Storage: 
+
+Replace placeholder URLs with image upload functionality, storing images securely in Azure Blob Storage for Venues and Events. 
+
+Enhanced Display and Search: 
+
+Develop a consolidated view to display bookings more effectively. 
+
+Add a search feature to browse venues, events, and bookings by various criteria. 
+
+Azure Deployment Updates: 
+
+Deploy the updated web application with blob storage integration. 
+
+ 
+
+Part 3: Advanced Filtering, Reporting, and Documentation 
+
+Filtering and Event Type Integration: 
+
+Add a new EventType lookup table with predefined categories (e.g., Conference, Wedding, Concert, etc.) to classify events. 
+
+Enhance the search functionality to filter results by event type, venue, date range, and availability. 
+
+Final Deployment and Reflective Report Write-Up: 
+
+Ensure that the fully updated application is deployed to Azure with all the functionality from Parts 1 and 2 and that students understand how the app components interact with Azure services. 
+
+For the final assessment, you will submit a report reflecting on your experience while building the EventEase system using a host of Azure-based services and tools. In this report, you will explain how each service contributed to the app's functionality and performance. 
+
+ 
+
+By the end of this project 
+
+EventEase should have a fully functional Venue Booking System with essential features, from event, venue, and booking management to cloud-stored images and filtering capabilities. This project is going to prepare you for more complex projects based on cloud-based systems. 
+
+Instructions 
+
+ 
+
+This Portfolio of Evidence (POE) requires you to create the Web Application, Database Storage, Azure Compute, and Azure Data Storage components for EventEase, progressively developed through Part 1, Part 2, and culminating in the final POE solution. 
+
+ 
+
+To work on the POE, students are required to:  
+
+Have access to an Azure account with available credit. Your lecturer/campus will arrange this access at the start of this module.  
+
+Use Microsoft Visual Studio for your coding.  
+
+Save the source code in a GitHub repository. Your lecturer/campus will arrange this access at the start of the module.  
+
+ 
+
+The submission of each part of the POE will require you to do the following:  
+
+Create a document in MS Word which contains the following:  
+
+Your ST number. 
+
+The module code 
+
+The URL to your GitHub repository source code 
+
+All relevant URLs required, especially the URL of the deployed Web App 
+
+All answers required, including typed answers, diagrams, and screenshots  
+
+The document name must follow the format shown here: StudentNumber_ModuleCode_Part#.  
+
+E.g., if your student number is 12345 and you are submitting Part 1 of the POE for the module CLDV7111, create a document named 12345_CLDV7111_Part1, and subsequently a folder called 12345_CLDV7111_Part1  
+
+Submit this document on Arc, using the submission link on the Arc page for this module.  
+
+ 
+
+ 
+
+Part 1 — Project Foundation and Initial Deployment                                                          (Marks: 100) 
+
+ Related Content: Learning Units: 1-2 
+
+At the end of this specific part, students should be able to: 
+
+ 
+
+Practically 
+
+Design and create a Basic Database Structure. 
+
+Implement ASP.NET Core MVC Basics. 
+
+Integrate Azure SQL Database with ASP.NET Core. 
+
+Deploy an ASP.NET Core web application to Azure. 
+
+ 
+
+Theoretically 
+
+Explain the difference between deploying on-premises and in the cloud. 
+
+Identify key differences between Azure hosting models. 
+
+ 
+
+A.  Design the EventEase Database 
+
+ 
+
+Based on the background information provided earlier, develop an Entity-Relationship-Diagram with an accompanying Database Script that will hold the data to be captured into the EventEase system. Your database should contain three main tables for now, based on the CEO’s requirements in the background provided above. 
+
+ 
+
+B.  Develop the Web Application  
+
+ 
+
+Build an ASP.NET Core web application with corresponding models, controllers, and views for the EventEase system. 
+
+ 
+
+Your web application should include the following: 
+
+The relevant Models, Controllers, and Views for each of the Venues, Events, and Bookings. 
+
+Your application should communicate with your database, implementing CRUD functionality. 
+
+For the images, use placeholder URLs (links to sample images) for venues and events in this phase. 
+
+ 
+
+C.  Deploy your Web app and Database to Microsoft Azure: 
+
+Set up an Azure web app service and deploy your web app to this service. 
+
+Set up an Azure SQL Database and migrate your local data to the database service. 
+
+ 
+
+D.  Cloud Computing Basics 
+
+ 
+
+In what ways does deploying an application in the cloud differ from deploying it on premises, particularly regarding security, deployment speed, and resource management? Use examples to illustrate your points. 
+
+What are the key differences between Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), and why might EventEase benefit from the use of PaaS over the other two when building a new application? Use examples to support your answer. 
+
+ 
+
+ 
+
+Submission Notes 
+
+ 
+
+Ensure all the relevant material is present in your submission, i.e., your locally developed web app, ERD, Database Script, Word document, etc.  
+
+Do not forget to provide any relevant URLs, such as the web app URL. 
+
+Remember that this submission must include code attribution and traditional referencing, as it includes both practical and theoretical content. 
+
+ 
+
+[TOTAL MARKS: 100] 
+
+ 
+
+Part 2 — Enhancing Functionality and Integrating Cloud Storage                                     (Marks: 100) 
+
+Related Content: Learning Units: 3-6 
+
+At the end of this specific part, students should be able to: 
+
+ 
+
+Practically 
+
+Implement Error Handling and Validation 
+
+Manage Images with Azure Blob Storage 
+
+Enhancing Application Interface and Display 
+
+Implement a Basic Search Functionality 
+
+Publish Updated Application and Services to Azure 
+
+ 
+
+Theoretically 
+
+Explain how Azure Cognitive Search differs from traditional search engines. 
+
+Discuss the importance of normalization in cloud-based database design. 
+
+Compare the differences between relational and NoSQL cloud-based databases. 
+
+Discuss how Durable functions can benefit a cloud application's performance. 
+
+ 
+
+A.  Integrate Azure Storage 
+
+ 
+
+In part 1, your event and venue images were being saved as simple URLs to the database. This is not sustainable long term; images need to be properly stored and managed, so for part 2, your images must now be stored in an Azure Storage Service. 
+
+  
+
+B.  Implementing Error Handling and Validation 
+
+ 
+
+We want to improve the User Experience by implementing validation rules and proper error handling to prevent common crash cases and user errors that may occur during the use of the system.  
+
+ 
+
+Add validation to prevent the double booking of a venue for two different events on the same date and time. 
+
+Add validation to restrict the deletion of venues or events associated with active bookings. 
+
+Ensure the application does not crash on common user error actions, such as a user adding a new venue without a required field. 
+
+Ensure to add a function that displays an alert to the user when a validation error occurs. 
+
+C.  Enhanced Display and Search: 
+
+ 
+
+In part 1, your database included only three tables; to enhance the booking display, you will be required to incorporate a view that consolidates the relevant booking information to create a richer display for the booking specialists to manage the bookings.  
+
+This view should include all the relevant information coming from the venue and event tables and provide relevant booking information. 
+
+Add a simple search function to this new booking’s view so the booking specialists can search for bookings via the BookingID, or Event Name. 
+
+ 
+
+D.  Azure Deployment Updates: 
+
+ 
+
+Deploy the updated web application with Azure storage and search integration. 
+
+Update your database to include the newly created view. 
+
+ 
+
+E.  Database Design, Cognitive Search 
+
+ 
+
+Explain how Azure’s Cognitive Search differs from traditional search engines and discuss potential use cases where Cognitive Search would offer a clear advantage. What limitations does it have, and how can they be mitigated? 
+
+Why is database normalization important in cloud-based database design? Discuss the impact of both normalized and denormalized structures on performance and scalability in a cloud environment like Azure 
+
+ 
+
+Submission Notes 
+
+Ensure all the relevant material is present in your submission.  
+
+Do not forget to provide any relevant URLs, such as the web app URL. 
+
+Remember that this submission must include code attribution and traditional referencing, as it includes both practical and theoretical content. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+[TOTAL MARKS: 100] 
+
+Part 3 — Advanced Filtering, Reporting, and Documentation                                           (Marks: 100) 
+
+Related Content: Learning Units: 7-9 
+
+At the end of this specific part, students should be able to: 
+
+ 
+
+Practically 
+
+Enhance Search with Filtering and Event Type Classification. 
+
+Finalise Application Deployment and Documentation. 
+
+Reflect on Project and Cloud Skills Developed. 
+
+ 
+
+Theoretically 
+
+Discuss how Cosmos DB differs from traditional databases. 
+
+Discuss key considerations when designing logic apps that handle sensitive data. 
+
+Explain how combining Event Grid with other services can create robust workflows. 
+
+ 
+
+A.  Advanced Filtering 
+
+ 
+
+Let’s now extend the search feature we implemented in part 2 to include filters to improve the search experience for the booking specialists:  
+
+ 
+
+Add a new EventType lookup to your database with predefined categories and an availability field to your venue table. 
+
+Implement filters to your search functionality to filter results by event type, date range, and venue availability. 
+
+ 
+
+B.  Azure Deployment Updates: 
+
+ 
+
+Deploy the updated web application with filter feature integration. 
+
+Update your database to include the newly created table and field. 
+
+ 
+
+C.  Reflective Technical Report 
+
+ 
+
+You will now write a reflective report documenting your development journey throughout this POE, summarising your experience with Azure Web App, SQL Database, and Azure Storage, explaining how each service contributed to your design, development, and architectural decisions when building the Event Ease application.  
+
+ 
+
+Your report must include the following: 
+
+A detailed description of the application’s full feature list. 
+
+Component discussion: 
+
+Discuss which Azure services were used for each part of the project and why they were used. You may also include some potential alternatives to the tools you used that you feel could have better fit the implementation. 
+
+Discuss the technologies used to build the project and why they were used. 
+
+Reflect on the entire project from Part 1 to now and discuss what you have come to understand and learnt in terms of designing, developing, and deploying cloud-based applications. 
+
+ 
+
+Submission Notes 
+
+Ensure all the relevant material is present in your submission.  
+
+Do not forget to provide any relevant URLs, such as the web app URL. 
+
+Remember that this submission must include code attribution & traditional referencing as it includes both practical and theoretical content. 

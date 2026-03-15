@@ -1,0 +1,41 @@
+@model IEnumerable<WebApplication1.Models.Venue>
+
+@{
+    ViewData["Title"] = "Venues";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Venues</h1>
+    <a asp-action="Create" class="btn btn-primary">+ Add Venue</a>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No venues found. Add one to get started.</div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var venue in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    @if (!string.IsNullOrEmpty(venue.ImageUrl))
+                    {
+                        <img src="@venue.ImageUrl" class="card-img-top" alt="@venue.VenueName" style="height:200px;object-fit:cover;">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@venue.VenueName</h5>
+                        <p class="card-text text-muted">@venue.Location</p>
+                        <p class="card-text"><small>Capacity: @venue.Capacity</small></p>
+                    </div>
+                    <div class="card-footer d-flex gap-2">
+                        <a asp-action="Details" asp-route-id="@venue.VenueId" class="btn btn-sm btn-outline-secondary">Details</a>
+                        <a asp-action="Edit" asp-route-id="@venue.VenueId" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@venue.VenueId" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

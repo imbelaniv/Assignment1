@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{DDC53B66-2F1B-4679-A894-6ED2583E916A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dev-docs", "dev-docs", "{E77B69DB-0849-4FA2-BB0C-D4F5C13E30F2}"
+	ProjectSection(SolutionItems) = preProject
+		dev-docs\marking_rubric.md = dev-docs\marking_rubric.md
+		dev-docs\introduction.txt = dev-docs\introduction.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

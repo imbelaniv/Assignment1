@@ -1,0 +1,33 @@
+@model WebApplication1.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<h1>Booking Details</h1>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Booking ID</dt>
+    <dd class="col-sm-9">@Model.BookingId</dd>
+
+    <dt class="col-sm-3">Event</dt>
+    <dd class="col-sm-9">@Model.Event?.EventName</dd>
+
+    <dt class="col-sm-3">Event Date</dt>
+    <dd class="col-sm-9">@Model.Event?.EventDate.ToString("dd MMM yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Venue</dt>
+    <dd class="col-sm-9">@Model.Venue?.VenueName</dd>
+
+    <dt class="col-sm-3">Venue Location</dt>
+    <dd class="col-sm-9">@Model.Venue?.Location</dd>
+
+    <dt class="col-sm-3">Booking Date</dt>
+    <dd class="col-sm-9">@Model.BookingDate.ToString("dd MMM yyyy")</dd>
+</dl>
+
+<div class="d-flex gap-2">
+    <a asp-action="Edit" asp-route-id="@Model.BookingId" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>

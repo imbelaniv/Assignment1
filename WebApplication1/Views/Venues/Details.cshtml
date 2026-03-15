@@ -1,0 +1,41 @@
+@model WebApplication1.Models.Venue
+
+@{
+    ViewData["Title"] = "Venue Details";
+}
+
+<h1>Venue Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" class="img-fluid rounded" alt="@Model.VenueName">
+        }
+        else
+        {
+            <div class="bg-secondary text-white d-flex align-items-center justify-content-center rounded" style="height:200px;">No Image</div>
+        }
+    </div>
+    <div class="col-md-8">
+        <dl class="row">
+            <dt class="col-sm-4">Venue Name</dt>
+            <dd class="col-sm-8">@Model.VenueName</dd>
+
+            <dt class="col-sm-4">Location</dt>
+            <dd class="col-sm-8">@Model.Location</dd>
+
+            <dt class="col-sm-4">Capacity</dt>
+            <dd class="col-sm-8">@Model.Capacity</dd>
+
+            <dt class="col-sm-4">Image URL</dt>
+            <dd class="col-sm-8">@(Model.ImageUrl ?? "—")</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-3 d-flex gap-2">
+    <a asp-action="Edit" asp-route-id="@Model.VenueId" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>
