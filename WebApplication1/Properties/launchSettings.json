@@ -8,8 +8,7 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5103",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "DbPassword": "0792589210Tm#"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "https": {
